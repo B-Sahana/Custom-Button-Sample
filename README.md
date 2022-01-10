@@ -150,4 +150,5 @@ Ex: mCustomButtom.setButtonType(CustomButton.ButtonType.COLOR_BACKGROUND);
 
 Ex: mCustomButtom.setStrokeWidthInDp(3);  or  mCustomButtom.setStrokeWidthInPixels(3);  or  mCustomButtom.setStrokeWidth(R.dimen.stroke_width);
 ````
-
+10. Call the below method to get the button text and it returns string: 
+```String text = mCustomButtom.getText();```
