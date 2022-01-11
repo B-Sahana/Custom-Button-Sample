@@ -22,7 +22,7 @@ Latest version of the library can be found on Maven Central.
 Open your ```build.gradle``` Then, include the library as dependency:
 
 ```
-implementation 'com.barelogics:sahana.customButton:1.3'
+implementation 'com.barelogics:sahana.customButton:1.4'
 ```
 
 # For Maven users
@@ -31,7 +31,7 @@ Add this dependency to your ```pom.xml```:
 <dependency>
   <groupId>com.barelogics</groupId>
   <artifactId>sahana.customButton</artifactId>
-  <version>1.3</version>
+  <version>1.4</version>
   <type>aar</type>
 </dependency>
 ```
