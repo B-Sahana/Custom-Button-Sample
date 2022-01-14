@@ -32,7 +32,7 @@ Add this dependency to your ```pom.xml```:
 <dependency>
   <groupId>com.barelogics</groupId>
   <artifactId>sahana.customButton</artifactId>
-  <version>1.6-</version>
+  <version>1.6</version>
   <type>aar</type>
 </dependency>
 ```
