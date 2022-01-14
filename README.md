@@ -6,7 +6,8 @@ An easy to customize button color for different button states(pressed,disabled..
 - Customizable button size, background color and border color.
 - Automatically sets button color when pressed, enable and disable.
 - Easy to add icons either left or right to the button text and can set icon size also.
-- minSdkVersion 19
+- minSdkVersion 16
+- targetSdkVersion 30
  
 ## Screenshots
 ![](screenshots/socb.gif)
@@ -22,7 +23,7 @@ Latest version of the library can be found on Maven Central.
 Open your ```build.gradle``` Then, include the library as dependency:
 
 ```
-implementation 'com.barelogics:sahana.customButton:1.4'
+implementation 'com.barelogics:sahana.customButton:1.6'
 ```
 
 # For Maven users
@@ -31,13 +32,13 @@ Add this dependency to your ```pom.xml```:
 <dependency>
   <groupId>com.barelogics</groupId>
   <artifactId>sahana.customButton</artifactId>
-  <version>1.4</version>
+  <version>1.6-</version>
   <type>aar</type>
 </dependency>
 ```
 ## Usage
 
-Please see the ```CustomButtonSample/app```  for a more detailed code example of how to use the library.
+Please see the ```Custom-Button-Sample/app```  for a more detailed code example of how to use the library.
 
 1.Add the ```CustomButton``` view to the layout you want to show.
 ```
@@ -50,10 +51,11 @@ Please see the ```CustomButtonSample/app```  for a more detailed code example of
         app:setColor="@color/colorPrimary"
         app:setImage="@drawable/ic_baseline_add_24"
         app:setText="Add"
+        app:setTextFont="@string/extraBold"
         app:setTextSize="19sp"
         app:showImage="right" />
  ```    
-2. Add Fonts:
+2. **Add Fonts:**
    Add your custom fonts to ```assets/```. All font definitions are relative to this path.
   
    Assuming that you are using Gradle you should create the assets directory under ```src/main/``` in your project directory if it does not already exist. As it's   popular to use multi-project build with Gradle the path is usually ```app/src/main/assets/```, where app is the project name.
@@ -81,7 +83,9 @@ Please see the ```CustomButtonSample/app```  for a more detailed code example of
 
      **6. color_background:** Sets the ```setColor``` attribute color value to the background of the button with white text.
 
-     **7. color_background_with_color_border:** For this button type you have to set the ```setBorderColor``` attribute along with the ```setcolor```. The ```setBorderColor``` color value sets to the border of the button and the ```setColor``` attribute color value sets to the background of the button with white text. So this button type is used to set different colors for background and border with white text..
+     **7. color_background_with_color_border:** For this button type you have to set the ```setBorderColor``` attribute along with the ```setcolor```. The ```setBorderColor``` color value sets to the border of the button and the ```setColor``` attribute color value sets to the background of the button with white text. So this button type is used to set different colors for background and border with white text.
+     
+     **8. color_background_with_transparent_background:** Sets the ```setColor``` attribute color value to the background of the button with white text and when pressed the button then sets transparent background with text of the ```setColor``` attribute color value.
                                             
 - ```setBorderColor``` - is used to set border color for the button.
 
@@ -104,6 +108,24 @@ Please see the ```CustomButtonSample/app```  for a more detailed code example of
 - ```setImageWidth``` - is used to set icon width in dp. By default width value 25dp.
 
 - ```setImageHeight``` - is used to set icon height in dp. By default height value 25dp.
+
+- ```android:scaleType``` - is used to scale icon in given space.
+
+- ```iconMarginLeft``` - is used to set left margin to icon.
+
+- ```iconMarginRight``` - is used to set right margin to icon.
+
+- ```iconMarginTop``` - is used to set top margin to icon.
+
+- ```iconMarginBottom``` - is used to set bottom margin to icon.
+
+- ```textMarginLeft``` - is used to set left margin to text.
+
+- ```textMarginRight``` - is used to set right margin to text.
+
+- ```textMarginTop``` - is used to set top margin to text.
+
+- ```textMarginBottom``` - is used to set bottom margin to text.
 
 4. If you would like to enable/disable the button dynamically then call the below method:
 ````
@@ -152,3 +174,20 @@ Ex: mCustomButtom.setStrokeWidthInDp(3);  or  mCustomButtom.setStrokeWidthInPixe
 ````
 10. Call the below method to get the button text and it returns string: 
 ```String text = mCustomButtom.getText();```
+
+## License
+``` 
+Copyright 2022 Sahana B
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
