@@ -1,15 +1,17 @@
 # Custom-Button-Sample
-An easy to customize button color for different button states(pressed,disabled..etc) without selector creation and also you can add left/right image easily to it.
+CustomButton(custom button) is an easy android library to customize button color for different button states(pressed,disabled..etc) without selector creation and also you can add left/right icon easily to it.
 
 # Features
 - Customizable button text color, size and font style.
 - Customizable button size, background color and border color.
-- Automatically sets button color when pressed, enable and disable.
+- Automatically sets button color for pressed, enable and disable states.
 - Easy to add icons either left or right to the button text and can set icon size also.
-- minSdkVersion 16
-- targetSdkVersion 30
+- Easy to change to as image button or button
+- minSdkVersion 21
+- targetSdkVersion 33
  
 ## Screenshots
+![](screenshots/customButton.gif)
 ![](screenshots/socb.gif)
 ![](screenshots/socb.png)
 ![](screenshots/socb2.png)
@@ -17,13 +19,13 @@ An easy to customize button color for different button states(pressed,disabled..
 
 ## Installation
 
-Latest version of the library can be found on Maven Central.
+Latest version of the customButton(Custom Button) android library can be found on Maven Central.
 
 # For Gradle users
 Open your ```build.gradle``` Then, include the library as dependency:
 
 ```
-implementation 'com.barelogics:sahana.customButton:1.6'
+implementation 'com.barelogics:sahana.customButton:1.7'
 ```
 
 # For Maven users
@@ -32,13 +34,13 @@ Add this dependency to your ```pom.xml```:
 <dependency>
   <groupId>com.barelogics</groupId>
   <artifactId>sahana.customButton</artifactId>
-  <version>1.6</version>
+  <version>1.7</version>
   <type>aar</type>
 </dependency>
 ```
 ## Usage
 
-Please see the ```Custom-Button-Sample/app```  for a more detailed code example of how to use the library.
+Please see the ```Custom-Button-Sample/app```  for a more detailed code example of how to use the Custom-Button android library.
 
 1.Add the ```CustomButton``` view to the layout you want to show.
 ```
@@ -47,11 +49,11 @@ Please see the ```Custom-Button-Sample/app```  for a more detailed code example 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:buttonType="normal_white_background"
+        app:buttonType="normal_button"
         app:setColor="@color/colorPrimary"
         app:setImage="@drawable/ic_baseline_add_24"
         app:setText="Add"
-        app:setTextFont="@string/extraBold"
+        app:setTextFont="@string/bold"
         app:setTextSize="19sp"
         app:showImage="right" />
  ```    
@@ -63,31 +65,31 @@ Please see the ```Custom-Button-Sample/app```  for a more detailed code example 
    You might consider creating a ```fonts/``` subdirectory in the assets directory (as in examples).
 
 3. Configure attributes:
-- ```setColor``` - is used to set color for text and border of the button.
+- ```setColor``` - is used to set color for the button(such as text,border and background color of the button according to the ```buttonType``` we set).
 
 - ```setImage``` - is used to set icon drawables. Only use the ```setImage``` attribute when you have to set icon.
 
 - ```showImage``` - is used to show/set an icon either left or right, has two values ```left``` and ```right```. By default set to ```left```.
 
-- ```buttonType``` - is used to set different types of button. By default set to ```normal_white_background```. It has 7 types.
+- ```buttonType``` - is used to set different types of button. By default set to ```normal_button```. It has 7 types.
 
-     **1. normal_white_background:** It is a general button. Sets the ```setColor``` attribute color value to the border and text of the button with white background.
-     
-     **2. normal_transparent_background:** Sets the ```setColor``` attribute color value to the border and text of the button with transparent background.
+     **1. normal_button:** It is a general button.```setColor``` value will set to the **border** and **text** of the button with **white background**. On pressed state, the same ```setColor``` value will apply to the button **background with white color text**
 
-     **3. normal_transparent_background_no_border:** Sets the ```setColor``` attribute color value to the text of the button with transparent background and without border.
+     **2. transparent_button:** ```setColor``` value will set to the **border and text** of the button **with transparent background.** On pressed state, the same ```setColor``` value will apply to the button **background with white color text**
 
-     **4. normal_white_background_no_border:** Sets the given color in the ```setColor``` attribute to the text of the button with white background and with no border.
-     
-     **5. normal_white_background_with_color_border:** For this button type, you have to set ```setBorderColor``` attribute value along with the ```setcolor```. The ```setBorderColor``` value will be set to the border of the button and the ```setColor``` attribute color value set to the text with white background. So this button type is used to set different colors for text and border with white background.
+     **3. normal_button_with_distinct_color:** If we want to set **different colors for text and border** of the button then we should use this. ```setBorderColor``` attribute value should set along with the ```setColor```. ```setBorderColor``` value will set to the **border of the button**, ```setColor``` value will set to the **text of the button with white background**. So this button type is used **to set different colors for text and border with white background**. On pressed state, the ```setBorderColor``` value will apply to the **button background with white color text**.
 
-     **6. color_background:** Sets the ```setColor``` attribute color value to the background of the button with white text.
+     **4. color_button:** ```setColor``` attribute color value will set to the **background and border of the button with white text**. On pressed state, the same ```setColor``` value will apply to the **text of the button** with **white background**.
 
-     **7. color_background_with_color_border:** For this button type you have to set the ```setBorderColor``` attribute along with the ```setcolor```. The ```setBorderColor``` color value sets to the border of the button and the ```setColor``` attribute color value sets to the background of the button with white text. So this button type is used to set different colors for background and border with white text.
-     
-     **8. color_background_with_transparent_background:** Sets the ```setColor``` attribute color value to the background of the button with white text and when pressed the button then sets transparent background with text of the ```setColor``` attribute color value.
+     **5. multicolor_button_with_white_text:** If we want to set **different colors** for **background** and **border** of the **button** then we should use this. ```setBorderColor``` attribute value should set along with the ```setColor```. ```setBorderColor``` value will set to the **border** of the button, ```setColor``` value will set to the **background** of the button with **white text**. So this button type is used to set **different colors** for **background** and **border** with **white text**. On pressed state, the ```setBorderColor``` value will apply to the **button background** with **white color text**.
+
+     **6. color_button_with_transparent_background:** ```setColor``` attribute color value will set to the **background** and **border** of the button with **white text**. On pressed state, the same ```setColor``` value will apply to the **text** of the button with **transparent background**.
+
+     **7. multicolor_button:** If we want to set **different colors** for **background, text and/or icon** and **border** of the **button** then we should use this. ```setBorderColor``` ```setBackgroundColor``` attribute value should set along with the ```setColor```. ```setBorderColor``` value will set to the **border** of the button, ```setBackgroundColor``` value will set to the **background** of the button ```setColor``` value will set to the **text** of the button,. So this button type is used to set **different colors** for **background, text and/or icon** and **border**. On pressed state, the ```setColor``` value will apply to the **button background** and ```setBackgroundColor``` value will apply to the **text**.
                                             
-- ```setBorderColor``` - is used to set border color for the button.
+- ```setBorderColor``` - is used to set border color for the button. If we want to set **different color for button border** then we should use this. Otherwise no need to set.
+
+- ```setBackgroundColor``` - is used to set background color for the button. If we want to set **different color for button background ,text and/or icon and border** then only use this attribute to set background color. Otherwise no need to set.
 
 - ```setText``` - is used to set text for button.
 
@@ -143,26 +145,31 @@ Ex: mCustomButtom.setText("Your button text");
 setImage(int imageViewResourceId)
 Ex: mCustomButtom.setImage(R.drawable.ic_edit);
 ````
- 
-7. If you would like to set color dynamically for the button then call the below method:
+
+7. If you would like to set/show icon direction/position either left or right dynamically for the button then call the below method:
+````
+showImage(@Direction int direction)
+Ex: mCustomButtom.showImage(CustomButton.Direction.RIGHT);
+````
+8. If you would like to set color dynamically for the button then call the below method:
 ````
 setColor(int colorResourceID)
 Ex: mCustomButtom.setColor(R.color.green);
 ````
- 
-8. If you would like to set border color dynamically for the button then call the below method: 
+
+9. If you would like to set border color dynamically for the button then call the below method:
 ````
 setBorderColor(int colorResourceID)
 Ex: mCustomButtom.setBorderColor(R.color.red);
 ````
- 
-9. If you would like to set button type dynamically then call the below method: 
+
+10. If you would like to set button type dynamically then call the below method:
 ````
-setButtonType(@ButtonType int buttonType)
-Ex: mCustomButtom.setButtonType(CustomButton.ButtonType.COLOR_BACKGROUND);
+setButtonType(@Type int buttonType)
+Ex: mCustomButtom.setButtonType(CustomButton.Type.COLOR_BUTTON);
 ````
 
-10. If you would like to set stroke width dynamically then call the below one of methods: 
+11. If you would like to set stroke width dynamically then call the below one of methods:
 ````
    setStrokeWidthInDp(int width)
             or
@@ -172,8 +179,25 @@ Ex: mCustomButtom.setButtonType(CustomButton.ButtonType.COLOR_BACKGROUND);
 
 Ex: mCustomButtom.setStrokeWidthInDp(3);  or  mCustomButtom.setStrokeWidthInPixels(3);  or  mCustomButtom.setStrokeWidth(R.dimen.stroke_width);
 ````
-10. Call the below method to get the button text and it returns string: 
-```String text = mCustomButtom.getText();```
+12. Call the below method to get the button text and it returns string:
+    ```String text = mCustomButtom.getText();```
+
+13. If you would like to set text margins in pixels dynamically then call the below method:
+````
+   setTextMargins(@Nullable Integer textMarginLeft, @Nullable Integer textMarginRight, @Nullable Integer textMarginTop, @Nullable Integer textMarginBottom)
+ 
+Ex: mCustomButtom.setTextMargins(50,50,null,null); 
+````
+14. If you would like to set icon margins in pixels dynamically then call the below method:
+````
+     setIconMargins(@Nullable Integer iconMarginLeft, @Nullable Integer iconMarginRight, @Nullable Integer iconMarginTop, @Nullable Integer iconMarginBottom) 
+Ex: mCustomButtom.setIconMargins(null,null,50,null); 
+````
+15. If you would like to set background color dynamically for the button then call the below method:
+````
+setBackgroundColour(int colorResourceID)
+Ex: mCustomButtom.setBackgroundColour(R.color.red);
+````
 
 ## License
 ``` 
