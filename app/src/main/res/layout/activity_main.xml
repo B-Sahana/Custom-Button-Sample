@@ -1,147 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_marginBottom="20dp">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="White bg with/without icon"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:background="@color/gray"
+        android:orientation="vertical">
 
-    <com.barelogics.sahana.CustomButton
-        android:id="@+id/customButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:buttonType="normal_white_background"
-        app:setColor="@color/purple_500"
-        app:setImage="@drawable/ic_baseline_add_24"
-        app:setText="Add"
-        app:setTextSize="19sp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:enabled="false"
-        android:onClick="onClick"
-        app:buttonType="normal_white_background"
-        app:setColor="@color/purple_700"
-        app:setCornerRadius="5dp"
-        app:setText="Disabled"
-        app:setTextSize="19sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/custom_button_as_image_button"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="17sp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        app:buttonType="normal_white_background"
-        app:setColor="@color/teal_200"
-        app:setImage="@drawable/ic_baseline_add_24"
-        app:setStrokeWidth="@dimen/stroke_width"
-        app:setText="Add"
-        app:setTextSize="19sp"
-        app:showImage="right" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Colored bg with/without icon, various text sizes and font"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+            <com.barelogics.sahana.CustomButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:gravity="center"
+                app:buttonType="normal_button"
+                app:setColor="@color/purple_500"
+                app:setImage="@drawable/ic_baseline_add_24"
+                app:setImageHeight="25dp"
+                app:setImageWidth="25dp"
+                app:setStrokeWidth="2dp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        app:buttonType="color_background"
-        app:setAllCaps="false"
-        app:setColor="@color/teal_700"
-        app:setCornerRadius="1dp"
-        app:setImage="@drawable/ic_baseline_edit_24"
-        app:setImageHeight="30dp"
-        app:setImageWidth="30dp"
-        app:setText="Edit"
-        app:setTextFont="fonts/extrabold.otf"
-        app:setTextSize="16sp" />
+            <com.barelogics.sahana.CustomButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:gravity="center"
+                app:buttonType="color_button"
+                app:setColor="@color/purple_500"
+                app:setImage="@drawable/ic_baseline_add_24"
+                app:setImageHeight="25dp"
+                app:setImageWidth="25dp"
+                app:setStrokeWidth="2dp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:enabled="false"
-        android:onClick="onClick"
-        app:buttonType="color_background"
-        app:setColor="@color/purple_200"
-        app:setText="Edit"
-        app:setTextFont="fonts/extrabold.otf"
-        app:setTextSize="19sp" />
+            <com.barelogics.sahana.CustomButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:gravity="center"
+                app:buttonType="multicolor_button_with_white_text"
+                app:setBorderColor="@android:color/holo_red_dark"
+                app:setColor="@color/green"
+                app:setImage="@drawable/ic_baseline_add_24"
+                app:setImageHeight="25dp"
+                app:setImageWidth="25dp"
+                app:setStrokeWidth="2dp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        app:buttonType="color_background"
-        app:setColor="@color/black"
-        app:setCornerRadius="10dp"
-        app:setImage="@drawable/ic_baseline_edit_24"
-        app:setText="Edit"
-        app:setTextSize="19sp"
-        app:showImage="right" />
+            <com.barelogics.sahana.CustomButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:gravity="center"
+                app:buttonType="normal_button_with_distinct_color"
+                app:setBorderColor="@android:color/holo_green_dark"
+                app:setColor="@android:color/holo_red_dark"
+                app:setImage="@drawable/ic_baseline_add_24"
+                app:setImageHeight="25dp"
+                app:setImageWidth="25dp"
+                app:setStrokeWidth="2dp" />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Different border color and bg with/without icon"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/custom_button_easily_customizable_colors_in_all_states"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="17sp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        app:buttonType="color_background_with_color_border"
-        app:setBorderColor="@android:color/holo_red_dark"
-        app:setColor="@android:color/holo_blue_light"
-        app:setCornerRadius="5dp"
-        app:setText="Update"
-        app:setTextSize="19sp" />
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            app:setAllCaps="false"
+            app:setColor="@android:color/holo_red_dark"
+            app:setCornerRadius="5dp"
+            app:setImage="@drawable/ic_baseline_add_24"
+            app:setImageHeight="25dp"
+            app:setImageWidth="25dp"
+            app:setText="Normal Button type"
+            app:setTextFont="@string/bold"
+            app:setTextSize="13sp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        app:buttonType="normal_white_background_with_color_border"
-        app:setBorderColor="@android:color/holo_green_dark"
-        app:setColor="@android:color/holo_blue_light"
-        app:setCornerRadius="5dp"
-        app:setText="Update"
-        app:setTextSize="19sp" />
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="normal_button"
+            app:setColor="@android:color/holo_blue_light"
+            app:setCornerRadius="5dp"
+            app:setStrokeWidth="0dp"
+            app:setText="normal button type without border"
+            app:setTextSize="16sp" />
 
-    <com.barelogics.sahana.CustomButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="onClick"
-        android:layout_gravity="center_horizontal"
-        app:buttonType="normal_white_background"
-        app:setColor="@android:color/holo_blue_bright"
-        app:setCornerRadius="5dp"
-        app:setImage="@drawable/ic_baseline_add_24" />
-</LinearLayout>
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="normal_button_with_distinct_color"
+            app:setBorderColor="@android:color/holo_red_dark"
+            app:setColor="@color/green"
+            app:setCornerRadius="10dp"
+            app:setStrokeWidth="2dp"
+            app:setText="normal button with distinct color type"
+            app:setTextFont="fonts/extrabold.otf"
+            app:setTextSize="14sp" />
+
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="color_button"
+            app:setColor="@android:color/holo_red_dark"
+            app:setCornerRadius="1dp"
+            app:setImage="@drawable/ic_baseline_edit_24"
+            app:setStrokeWidth="2dp"
+            app:setText="color button type"
+            app:setTextSize="13sp"
+            app:showImage="right" />
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="color_button_with_transparent_background"
+            app:setColor="@android:color/holo_red_dark"
+            app:setCornerRadius="10dp"
+            app:setStrokeWidth="2dp"
+            app:setText="color button with transparent background type"
+            app:setTextFont="fonts/extrabold.otf"
+            app:setTextSize="13sp"
+            app:showImage="right" />
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="multicolor_button_with_white_text"
+            app:setAllCaps="false"
+            app:setBorderColor="@android:color/holo_green_dark"
+            app:setColor="@android:color/holo_orange_light"
+            app:setImage="@drawable/ic_baseline_edit_24"
+            app:setStrokeWidth="@dimen/stroke_width"
+            app:setText="multicolor button with white text type"
+            app:setTextFont="fonts/extrabold.otf"
+            app:setTextSize="14sp"
+            app:showImage="right" />
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="multicolor_button"
+            app:setAllCaps="false"
+            app:setBackgroundColor="@android:color/holo_orange_light"
+            app:setBorderColor="@android:color/holo_red_dark"
+            app:setColor="@color/black"
+            app:setImage="@drawable/ic_baseline_edit_24"
+            app:setStrokeWidth="@dimen/stroke_width"
+            app:setText="multicolor button"
+            app:setTextFont="fonts/extrabold.otf"
+            app:setTextSize="14sp"
+            app:showImage="right" />
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="transparent_button"
+            app:setColor="@color/purple_700"
+            app:setCornerRadius="5dp"
+            app:setText="transparent button type"
+            app:setTextSize="13sp"
+            app:textMarginLeft="10dp"
+            app:textMarginRight="10dp" />
+
+        <com.barelogics.sahana.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            app:buttonType="transparent_button"
+            app:setColor="@android:color/holo_red_dark"
+            app:setCornerRadius="5dp"
+            app:setStrokeWidth="0dp"
+            app:setText="transparent button type without border"
+            app:setTextSize="16sp" />
+
+
+    </LinearLayout>
+</ScrollView>

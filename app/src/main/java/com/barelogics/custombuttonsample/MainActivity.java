@@ -4,28 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.barelogics.sahana.CustomButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private CustomButton mCustomButton;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCustomButton = findViewById(R.id.customButton);
-        mCustomButton.setImage(R.drawable.ic_baseline_edit_24);
-        mCustomButton.setText("edit");
-        //mCustomButton.setViewEnable(false);
-        mCustomButton.setColor(R.color.purple_200);
-        mCustomButton.setOnClickListener(this);
-        mCustomButton.setButtonType(CustomButton.ButtonType.COLOR_BACKGROUND);
-        mCustomButton.setStrokeWidth(R.dimen.stroke_width);
+        LinearLayout view = findViewById(R.id.linearLayout);
+        CustomButton customButton = new CustomButton(this);
+        customButton.setText("Programmatic Button");
+        //customButton.setImage(R.drawable.ic_baseline_delete_24);
+        //customButton.setButtonType(CustomButton.Type.COLOR_BUTTON);
+        customButton.setColor(R.color.purple_500);
+        customButton.setClickable(true);
+        //customButton.setTextMargins(100, 100, null, null);
+        // customButton.showImage(CustomButton.Direction.RIGHT);
+        view.addView(customButton);
     }
 
-    @Override
-    public void onClick(View view) {
-
-    }
 }
