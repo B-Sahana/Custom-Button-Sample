@@ -165,7 +165,7 @@ Ex: mCustomButtom.setBorderColor(R.color.red);
 
 10. If you would like to set button type dynamically then call the below method:
 ````
-setButtonType(@Type int buttonType)
+setButtonType(@Type int type)
 Ex: mCustomButtom.setButtonType(CustomButton.Type.COLOR_BUTTON);
 ````
 
