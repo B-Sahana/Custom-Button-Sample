@@ -218,11 +218,11 @@ setBackgroundColour(int colorResourceID)
 Ex: mCustomButtom.setBackgroundColour(R.color.red);
 ````
 16. If you would like to set button margins dynamically then use the below methods as per you need:
-    must be dimension resource id. it can accept any size units like DIP, PX, SP, to avoid you can set null
+    must be dimension resource id. it can accept any size units like DIP, PX, SP
 ````
    setMargin(@DimenRes @Nullable Integer left, @DimenRes @Nullable Integer top, @DimenRes @Nullable Integer right, @DimenRes @Nullable Integer bottom)
- 
-Ex: mCustomButtom.setMargin(R.dimen.left_margin,R.dimen.top_margin,null,null); 
+  
+Ex: mCustomButtom.setMargin(R.dimen.left_margin,R.dimen.top_margin,null,null);//to avoid you can set null 
 ````
 
 ````
@@ -262,7 +262,8 @@ Ex: mCustomButtom.setLayoutBottomMargin(R.dimen.bottom_margin);
       
 Ex: mCustomButtom.setCornerRadius(R.dimen.radius);
 ````
-
+18. If you would like to set button's any specific corners radius dynamically then call the below methods as you need:
+    Must be dimension resource id. it can accept any size units like DIP, PX, SP.
 ````
       setTopRightRadius(@DimenRes int resId)
       
