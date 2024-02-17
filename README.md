@@ -3,7 +3,7 @@ CustomButton(custom button) is an easy android library to customize button color
 
 # Features
 - Customizable button text color, size and font style.
-- Customizable button size, background color and border color.
+- Customizable button size, shape, background color and border color.
 - Automatically sets button color for pressed, enable and disable states.
 - Easy to add icons either left or right to the button text and can set icon size also.
 - Easy to change to as image button or button
@@ -25,7 +25,7 @@ Latest version of the customButton(Custom Button) android library can be found o
 Open your ```build.gradle``` Then, include the library as dependency:
 
 ```
-implementation 'com.barelogics:sahana.customButton:1.7'
+implementation 'com.barelogics:sahana.customButton:1.8.1'
 ```
 
 # For Maven users
@@ -34,7 +34,7 @@ Add this dependency to your ```pom.xml```:
 <dependency>
   <groupId>com.barelogics</groupId>
   <artifactId>sahana.customButton</artifactId>
-  <version>1.7</version>
+  <version>1.8.1</version>
   <type>aar</type>
 </dependency>
 ```
@@ -107,6 +107,14 @@ Please see the ```Custom-Button-Sample/app```  for a more detailed code example 
 
 - ```setCornerRadius``` - is used to set corner radius of the button to make rounds. By default no(zero)corner radius for button.
 
+- ```setBottomLeftRadius```  - is used to set left side bottom of corner radius of the button to make round.
+
+- ```setBottomRightRadius``` - is used to set right side bottom of corner radius of the button to make round.
+
+- ```setTopLeftRadius``` - is used to set left side top of corner radius of the button to make round.
+
+- ```setTopRightRadius``` - is used to set right side top of corner radius of the button to make round.  
+
 - ```setImageWidth``` - is used to set icon width in dp. By default width value 25dp.
 
 - ```setImageHeight``` - is used to set icon height in dp. By default height value 25dp.
@@ -128,6 +136,17 @@ Please see the ```Custom-Button-Sample/app```  for a more detailed code example 
 - ```textMarginTop``` - is used to set top margin to text.
 
 - ```textMarginBottom``` - is used to set bottom margin to text.
+
+- ```android:layout_margin``` - is used to set margin to button.
+
+- ```setMarginLeft``` - is used to set left margin to button.
+
+- ```setMarginRight``` - is used to set right margin to button.
+
+- ```setMarginTop``` - is used to set top margin to button.
+
+- ```setMarginBottom``` - is used to set bottom margin to button.
+    
 
 4. If you would like to enable/disable the button dynamically then call the below method:
 ````
@@ -198,6 +217,76 @@ Ex: mCustomButtom.setIconMargins(null,null,50,null);
 setBackgroundColour(int colorResourceID)
 Ex: mCustomButtom.setBackgroundColour(R.color.red);
 ````
+16. If you would like to set button margins dynamically then use the below methods as per you need:
+    must be dimension resource id. it can accept any size units like DIP, PX, SP, to avoid you can set null
+````
+   setMargin(@DimenRes @Nullable Integer left, @DimenRes @Nullable Integer top, @DimenRes @Nullable Integer right, @DimenRes @Nullable Integer bottom)
+ 
+Ex: mCustomButtom.setMargin(R.dimen.left_margin,R.dimen.top_margin,null,null); 
+````
+
+````
+    setLayoutMargin(@DimenRes int resId)
+    
+Ex: mCustomButtom.setLayoutMargin(R.dimen.margin);
+````
+
+````
+   setLayoutLeftMargin(@DimenRes @Nullable Integer resId)
+ 
+Ex: mCustomButtom.setLayoutLeftMargin(R.dimen.left_margin); 
+````
+
+````
+    setLayoutRightMargin(@DimenRes int resId)
+    
+Ex: mCustomButtom.setLayoutRightMargin(R.dimen.right_margin);
+````
+
+````
+   setLayoutTopMargin(@DimenRes @Nullable Integer resId)
+ 
+Ex: mCustomButtom.setLayoutTopMargin(R.dimen.top_margin); 
+````
+
+````
+    setLayoutBottomMargin(@DimenRes int resId)
+    
+Ex: mCustomButtom.setLayoutBottomMargin(R.dimen.bottom_margin);
+````
+
+17. If you would like to set button's all corners radius dynamically then call the below method:
+    Must be dimension resource id. it can accept any size units like DIP, PX, SP.
+````
+      setCornerRadius(@DimenRes int resId)
+      
+Ex: mCustomButtom.setCornerRadius(R.dimen.radius);
+````
+
+````
+      setTopRightRadius(@DimenRes int resId)
+      
+Ex: mCustomButtom.setTopRightRadius(R.dimen.top_right_radius);
+````
+
+````
+      setTopLeftRadius(@DimenRes int resId)
+      
+Ex: mCustomButtom.setTopLeftRadius(R.dimen.top_left_radius);
+````
+
+````
+      setBottomRightRadius(@DimenRes int resId)
+      
+Ex: mCustomButtom.setBottomRightRadius(R.dimen.bottom_right_radius);
+````
+````
+      setBottomLeftRadius(@DimenRes int resId)
+      
+Ex: mCustomButtom.setBottomLeftRadius(R.dimen.bottom_left_radius);
+````
+
+
 
 ## License
 ``` 
